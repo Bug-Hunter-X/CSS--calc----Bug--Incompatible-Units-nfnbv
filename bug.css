@@ -1,0 +1,9 @@
+The following CSS code snippet demonstrates an unusual error that can occur when using the `calc()` function with percentages and units that don't directly convert:
+
+```css
+.element {
+  width: calc(50% - 10px);
+}
+```
+
+While this looks straightforward, it can unexpectedly break in older browsers or in certain situations. The issue arises because `calc()` requires compatible units within its operations. If a browser doesn't correctly parse the subtraction of pixels from a percentage, the width might become invalid, resulting in unexpected rendering.
