@@ -1,0 +1,15 @@
+One solution is to avoid direct subtraction of different units within `calc()`. Instead, we can use a more compatible method that leverages percentages or media queries depending on the context. Here's an example of a potential solution that uses a media query to adjust the width based on available space:
+
+```css
+.element {
+  width: 50%;
+}
+
+@media (min-width: 768px) {
+  .element {
+    width: calc(50% - 20px);
+  }
+}
+```
+
+This method ensures the element maintains a 50% width in smaller viewports, while adjusting the width when the viewport reaches a certain size. This approach offers more robust cross-browser compatibility compared to the original implementation.
